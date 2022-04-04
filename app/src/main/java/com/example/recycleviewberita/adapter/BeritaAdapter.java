@@ -47,6 +47,9 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.BeritaView
         Glide.with(context).load(listBerita.get(position).getImages()).into(holder.imageBerita);
         holder.txtJudul.setText(listBerita.get(position).getJudul());
         holder.txtKategori.setText(listBerita.get(position).getKategori());
+        holder.txtDeskripsi.setText(listBerita.get(position).getDeskripsi());
+
+
         if (listBerita.get(position).getKategori().equalsIgnoreCase("health")){
             holder.txtBullet.setTextColor(ColorStateList.valueOf(Color.RED));
         }else if (listBerita.get(position).getKategori().equalsIgnoreCase("travel")){
@@ -73,7 +76,7 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.BeritaView
     public class BeritaViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageBerita;
-        TextView txtJudul,txtBullet,txtKategori;
+        TextView txtJudul,txtBullet,txtKategori,txtDeskripsi;
         CardView cardButton;
 
         public BeritaViewHolder(@NonNull View itemView) {
@@ -83,6 +86,8 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.BeritaView
             txtJudul = itemView.findViewById(R.id.txtJudul);
             txtBullet = itemView.findViewById(R.id.txtBullet);
             txtKategori = itemView.findViewById(R.id.txtKategori);
+            txtDeskripsi=itemView.findViewById(R.id.txtDeskripsi);
+
         }
     }
 }
